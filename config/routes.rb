@@ -12,7 +12,15 @@ Refinery::Application.routes.draw do
           get 'remove'
         end
       end
+      
     end
+    
+    resources :snippet_types do
+      	member do
+      		get 'add'
+      		get 'remove'
+      	end
+      end
     
   end
   

@@ -1,0 +1,13 @@
+<!-- TODO enable this style of selection -->
+<!--
+<label>Type</label>
+<input type='hidden' name='switch_snippet_type' id='switch_snippet_type' value='<%= local_assigns[:current_snippet_type_id] %>' />
+<ul id='switch_snippet_type_picker' class='clearfix'>
+<% SnippetType.all.each do |st| %>
+	<li<%= " class='selected'" if :current_snippet_type_id && st.id.eql?(:current_snippet_type_id) %>><%= st.name %></li>	
+<% end %>
+    <li class='clearfix record <%= cycle('on', 'on-hover') %>' >
+      add
+    </li>
+</ul>
+-->

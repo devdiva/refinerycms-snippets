@@ -8,6 +8,8 @@ class Snippet < ActiveRecord::Base
 
   has_many :snippet_page, :dependent => :destroy
   has_many :pages, :through => :snippet_page
+  
+  belongs_to :snippet_type, :foreign_key => :snippet_type_id
 
   def self.inactive(page)
       @page = page

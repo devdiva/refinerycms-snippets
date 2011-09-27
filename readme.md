@@ -8,6 +8,9 @@ Snippets allows you to relate one or more html blocks to any page in Refinery.
 
 * RefineryCMS with 'Pages' engine (refinerycms-pages >= 0.9.9.1)
 
+## Fork Changes
+Added Snippet Type association, allowing for snippets to be referenced by a type name.  This allows for more modular inclusion of snippets within layouts.
+
 ## TODO
 
 ### to 1.0

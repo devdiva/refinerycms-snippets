@@ -9,7 +9,15 @@
              :locals => {
                :current_locale => Thread.current[:globalize_locale]
              } if defined?(::Refinery::I18n) %>
-  
+  <div class='field'>
+  	<%= f.label :snippet_type_id, "Type" %>
+  	<%= select :snippet, :snippet_type_id,SnippetType.find(:all,:order=>'name ASC').collect{|p| [p.name, p.id]}, {:prompt => 'Select Snippet Type'} %>
+  	or <%= link_to t('.create_new_type'), new_admin_snippet_type_url({
+                             :dialog => true,
+                             :width => 725,
+                             :height => 475
+                           }) %>
+  </div>
   <div class='field'>
     <%= f.label :title -%>
     <%= f.text_field :title, :class => 'larger widest' -%>

@@ -1,6 +1,7 @@
 <li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(snippet) -%>">
-  <span class='title'>
-    <%= snippet.title %>
+  <span class='title'><strong><%= "#{snippet.snippet_type.name} " rescue "-- " %></strong>
+  <%= "(#{snippet.snippet_type.id}) " rescue " " %>
+    <span class="preview"><%= snippet.title %></span>
     <% if ::Refinery::I18n.frontend_locales.many? and
           (locales = snippet.translations.collect{|t| t.locale}).present? %>
       <span class='preview'>

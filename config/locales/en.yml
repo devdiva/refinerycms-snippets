@@ -5,6 +5,7 @@ en:
   admin:
     snippets:
       actions:
+        create_new_type: Add New Snippet Type
         create_new: Add New Snippet
         reorder: Reorder Snippets
         reorder_done: Done Reordering Snippets

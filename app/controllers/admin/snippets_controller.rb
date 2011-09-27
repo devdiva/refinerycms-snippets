@@ -4,6 +4,7 @@ module Admin
     crudify :snippet, :xhr_paging => true
     
     def create
+      @snippet_types = SnippetType.find(:all, :order=>"name")
       if (@snippet = Snippet.create(params[:snippet])).valid?
         (request.xhr? ? flash.now : flash).notice = t(
           'refinery.crudify.created',

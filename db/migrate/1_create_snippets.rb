@@ -5,9 +5,11 @@ class CreateSnippets < ActiveRecord::Migration
       t.string :title, :limit => 36, :null => false
       t.text :body
       t.integer :position, :null => false, :default => 0
+      t.integer :snippet_type_id, :references => [:snippet_type, :id]
       t.timestamps
     end
-
+    add_index :snippets, :snippet_type_id, :name => 'snippet_type_id_ix'
+    
     load(Rails.root.join('db', 'seeds', 'snippets.rb'))
   end
 
